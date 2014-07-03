@@ -8,3 +8,5 @@ It has some interesting features like using using the $q promise/deferred implem
 To use it in phonegap, create a new, open-source project and provide this github repository. Phonegap knows how to deal with the www directory tree automatically.
 
 It has not been fully tested so please beware. It is only meant to show the basic ideas so that you can easily incorporate the barcode scanner into your app.
+
+The source code is distributed under the MIT license so you free to use it.
