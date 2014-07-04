@@ -1,29 +1,9 @@
 angular.module('starter.controllers', [])
 
-.controller('ScanCtrl', function($scope, $q) {
+.controller('ScanCtrl', function($scope, appServices) {
     $scope.message = '';
-    $scope.scan = function() {
-        // The plug operates asynchronously so a promise
-        // must be used to display the results correctly.
-        var deferred = $q.defer();
-        try {
-            cordova.plugins.barcodeScanner.scan(
-                function (result) {  // success
-                    deferred.resolve({'error':false, 'result': result});
-                }, 
-                function (error) {  // failure
-                    deferred.resolve({'error':true, 'result': error.toString()});
-                }
-            );
-        }
-        catch (exc) {
-            deferred.resolve({'error':true, 'result': 'exception: ' + exc.toString()});
-        }
-        return deferred.promise;
-    };
-
     $scope.click = function() {
-        var promise = $scope.scan();
+        var promise = appServices.scanBarcode();
         promise.then(
             function(result) {
                 if (result.error == false) {
