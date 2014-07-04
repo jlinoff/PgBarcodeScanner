@@ -3,7 +3,7 @@ PgBarcodeScanner
 
 This is a full implementation of a phonegap barcode scanner app for the platforms supported by com.phonegap.plugins.barcodescanner. It includes the phonegap compatible config.xml that identifies the plug in.
 
-The app has some interesting features like using using the $q promise/deferred implementation to capture the barcode scanner information for display in a table and the angularjs state routing that is the default in the ionic framework.
+The app has some interesting features like using the $q promise/deferred implementation to capture the barcode scanner information for display in a table and the angularjs state routing that is the default in the ionic framework.
 
 To use it in phonegap, create a new, open-source project and provide this github repository. Phonegap knows how to deal with the www directory tree automatically.
 
