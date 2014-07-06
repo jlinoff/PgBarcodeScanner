@@ -11,7 +11,7 @@ The app has not been fully tested so please beware. It is only meant to show the
 
 The source code is distributed under the MIT license so you are free to use it any way that you like.
 
-Here are the basic command that I used:
+Here are the basic commands that I used to create it:
 
     $ cd ~/work/apps
     $ ionic state PgBarcodeScanner tabs
