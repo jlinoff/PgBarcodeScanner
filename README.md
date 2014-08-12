@@ -69,18 +69,25 @@ I was able to test it locally using the android emulator on my Mac like this bec
     $ # Build the android APK
     $ ionic build android
     
-    $ # Add the APK to the emulator.
-    $ adb install /Users/jlinoff/work/apps/PgBarcodeScanner/platforms/android/ant-build/PgBarcodeScanner-debug-unaligned.apk
-
     $ # Run the emulator with the camera enabled.
     $ emulator64-arm -camera-front on @gn1
     
     $ # Or, if you have HAX installed for much faster emulation use gn2.
     $ # Note that you must use the full path to the emulator to avoid a qemu "bios.bin" not found error.
-    $ /Users/jlinoff/Development/adt-bundle-mac-x86_64-20140321/sdk/tools/emulator64-x86 -camera-front webcam0 @gn2
+    $ /Users/jlinoff/Development/adt-bundle-mac-x86_64-20140321/sdk/tools/emulator64-x86 -camera-front webcam0 @gn2 &
     
+    $ # Add the APK to the running emulator.
+    $ adb -e install /Users/jlinoff/work/apps/PgBarcodeScanner/platforms/android/ant-build/PgBarcodeScanner-debug-unaligned.apk
+    1289 KB/s (3983000 bytes in 3.016s)
+    WARNING: linker: libdvm.so has text relocations. This is wasting memory and is a security risk. Please fix.
+	    pkg: /data/local/tmp/PgBarcodeScanner-debug-unaligned.apk
+    Success
+
     $ # When finished uninstall the APK (unless you want to use it later).
-    $ adb uninstall /Users/jlinoff/work/apps/PgBarcodeScanner/platforms/android/ant-build/PgBarcodeScanner-debug-unaligned.apk
+    $ adb -e uninstall /Users/jlinoff/work/apps/PgBarcodeScanner/platforms/android/ant-build/PgBarcodeScanner-debug-unaligned.apk
+    
+    $ # Kill the emulator
+    $ kill -9 %1
 
 Here is the error that I saw when I tried to use the built-in emulation:
 
