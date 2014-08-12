@@ -90,3 +90,8 @@ Here is the error that I saw when I tried to use the built-in emulation:
         at ChildProcess.emit (events.js:98:17)
         at maybeClose (child_process.js:756:16)
         at Process.ChildProcess._handle.onexit (child_process.js:823:5)
+
+When the testing is complete, you can upload the project to http://build.phonegap.com using a zip file or from a github account. If you want to use a zip file create it as follows:
+
+    $ cd ~/work/apps/PgBarcodeScanner
+    $ zip -r PgBarcodeScanner.zip www  # zip file to upload to phonegap
